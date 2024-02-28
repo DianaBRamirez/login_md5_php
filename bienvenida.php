@@ -3,7 +3,7 @@ session_start();
 if (isset($_SESSION['nombre'])) {
     $nombre = $_SESSION['nombre'];
     include('public/header.php');
-}else {
+} else {
     header("Location: index.php");
     exit();
 }
@@ -35,11 +35,11 @@ if (isset($_SESSION['nombre'])) {
     <div class="row justify-content-center">
         <div class="col-md-4">
             <div class="card border-0 shadow-lg">
-                <div class="card-header bg-purple text-black"> 
+                <div class="card-header bg-purple text-black">
                     <h4 class="text-center" style="color: #4527a0;">¡Bienvenido a "Sufriendo por el cuatri .com"!</h4>
                 </div>
                 <div class="card-body">
-                    <div class="alert alert-success" role="alert" style="background-color:#f0e5f5; color: #000000;"> 
+                    <div class="alert alert-success" role="alert" style="background-color:#f0e5f5; color: #000000;">
                         <h5 class="text-center">Hola, <?php echo $nombre; ?></h5>
                     </div>
                     <div class="text-center mt-4">

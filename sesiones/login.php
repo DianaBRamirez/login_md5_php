@@ -1,5 +1,4 @@
-
-<?php 
+<?php
 $mysqli = new mysqli("localhost", "root", "", "EPHash");
 session_start();
 if ($_POST) { //va a guardar lo que lleve en método post
@@ -10,20 +9,18 @@ if ($_POST) { //va a guardar lo que lleve en método post
     $num = $resultado->num_rows;
     if ($num > 0) {
         $row = $resultado->fetch_assoc();
-        $password_bd = $row['password']; 
-        $pass_C =md5($password);
-        if ($password_bd == $pass_C) { 
-            $_SESSION['id']=$row['id']; 
-            $_SESSION['nombre']=$row['nombre'];
+        $password_bd = $row['password'];
+        $pass_C = md5($password);
+        if ($password_bd == $pass_C) {
+            $_SESSION['id'] = $row['id'];
+            $_SESSION['nombre'] = $row['nombre'];
             header("Location: bienvenida.php");
-        }
-        else{
+        } else {
             echo "<script>alert('Contraseña incorrecta');</script>";
         }
+    } else {
+        echo "<script>alert('No existe el usuario en la base de datos');</script>";
     }
-        else{
-            echo "<script>alert('No existe el usuario en la base de datos');</script>";
-        }
 }
 
 ?> 
